@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>LAb1</title><meta name="generator" content="MATLAB 9.10"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2023-03-01"><meta name="DC.source" content="LAb1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">piem&#275;rs 1: Simboliskie elementi</a></li><li><a href="#2">piem&#275;rs 2: Simbolisko elementu defin&#275;&#353;ana</a></li><li><a href="#3">uzdevums 1: izveidot 3*3 a indeks&#275;tu matricu ar visiem tr&#299;s variantiem</a></li><li><a href="#4">piem&#275;rs 3: Atvasin&#257;&#353;ana</a></li><li><a href="#5">uzdevums 2: apr&#275;&#311;in&#257;t atvisn&#257;jumu funkcijai z = a.*x.^2</a></li><li><a href="#6">uzdevums 3: apr&#275;&#311;in&#257;t atvasin&#257;jumu savai funkcijai</a></li><li><a href="#7">piem&#275;rs 4: Integr&#275;&#353;ana</a></li><li><a href="#8">uzdevums 4: darb&#299;bas ar integr&#275;&#353;anu</a></li><li><a href="#9">piem&#275;rs 5: noteiktais integr&#257;lis</a></li><li><a href="#10">uzdevums 5: apr&#275;&#311;in&#257;t noteikto integr&#257;li</a></li><li><a href="#11">uzdevums 6: integr&#257;lis, robe&#382;as, vien&#257;dojumi</a></li><li><a href="#12">uzdevums 7: "individualized task 2023"</a></li><li><a href="#13">piem&#275;rs 6: vienk&#257;r&#353;o&#353;ana</a></li><li><a href="#14">piem&#275;rs 7: k&#257; skaist&#257;k att&#275;lot</a></li><li><a href="#15">piem&#275;rs 8: substit&#363;cija</a></li><li><a href="#16">uzdevums 8: Substit&#363;cijas</a></li><li><a href="#17">piem&#275;rs 9: grafika z&#299;m&#275;&#353;ana p&#275;c simbolisk&#257;s izteiksmes</a></li><li><a href="#18">uzdevums 9: "individualized task 2023"</a></li></ul></div><h2 id="1">piem&#275;rs 1: Simboliskie elementi</h2><pre class="codeinput">syms <span class="string">a</span> <span class="string">b</span> <span class="string">c</span> <span class="string">d</span>
+A = [a b;c d]
+syms <span class="string">h</span> <span class="string">g</span> <span class="string">p</span> <span class="string">q</span>
+B = [h g;p q]
+C = A*B
+D = A.*B
+fprintf(<span class="string">'\npiem&#275;rs 1 end\n'</span>)
+</pre><pre class="codeoutput"> 
+A =
+ 
+[a, b]
+[c, d]
+ 
+ 
+B =
+ 
+[h, g]
+[p, q]
+ 
+ 
+C =
+ 
+[a*h + b*p, a*g + b*q]
+[c*h + d*p, c*g + d*q]
+ 
+ 
+D =
+ 
+[a*h, b*g]
+[c*p, d*q]
+ 
+
+piem&#275;rs 1 end
+</pre><h2 id="2">piem&#275;rs 2: Simbolisko elementu defin&#275;&#353;ana</h2><pre class="codeinput"><span class="comment">% pirmais veids</span>
+fprintf(<span class="string">'\npirmais veids k&#257; def'</span>)
+a = sym(<span class="string">'a'</span>);
+<span class="comment">% apr&#275;&#311;ins</span>
+sqrt(a^2)
+<span class="comment">% defin&#299;cija, a, kur a &gt; 0</span>
+a = sym(<span class="string">'a'</span>,<span class="string">'positive'</span>);
+<span class="comment">% apr&#275;&#311;ins</span>
+sqrt(a^2)
+
+<span class="comment">% otrais veids</span>
+fprintf(<span class="string">'\notrais veids k&#257; def'</span>)
+syms <span class="string">a</span> <span class="string">b</span> <span class="string">c</span> <span class="string">d</span>
+A = [a b; c d]
+A'
+<span class="comment">%{
+</span><span class="comment">"'"(apostrofs) - transpon&#275;&#353;ana
+</span><span class="comment">Kompl. skait&#316;iem tas taisa kompl. saist&#299;tus skait&#316;us("conj"conjunction).
+</span><span class="comment">Simboliskais main&#299;gais &#353;aj&#257; situ&#257;cij&#257; ir dom&#257;ts kompl. skaitlis.
+</span><span class="comment">(&#352;is visticam&#257;k b&#363;s noder&#299;gi fizikas atvasin&#257;tos priek&#353;metos ar laukiem utt.)
+</span><span class="comment">%}
+</span>
+<span class="comment">% def a b c d k&#257; ne kompl. sk.</span>
+syms <span class="string">a</span> <span class="string">b</span> <span class="string">c</span> <span class="string">d</span> <span class="string">real</span>
+A = [a b; c d]
+A'
+
+<span class="comment">% tre&#353;&#257;is veids</span>
+fprintf(<span class="string">'\ntre&#353;ais veids k&#257; def'</span>)
+<span class="comment">% uzreiz def izveido matricu, pieliek indeksus</span>
+ A = sym(<span class="string">'a'</span>,[2 3])
+fprintf(<span class="string">'\npiem&#275;rs 2 end\n'</span>)
+</pre><pre class="codeoutput">
+pirmais veids k&#257; def 
+ans =
+ 
+(a^2)^(1/2)
+ 
+ 
+ans =
+ 
+a
+ 
+
+otrais veids k&#257; def 
+A =
+ 
+[a, b]
+[c, d]
+ 
+ 
+ans =
+ 
+[conj(a), conj(c)]
+[conj(b), conj(d)]
+ 
+ 
+A =
+ 
+[a, b]
+[c, d]
+ 
+ 
+ans =
+ 
+[a, c]
+[b, d]
+ 
+
+tre&#353;ais veids k&#257; def 
+A =
+ 
+[a1_1, a1_2, a1_3]
+[a2_1, a2_2, a2_3]
+ 
+
+piem&#275;rs 2 end
+</pre><h2 id="3">uzdevums 1: izveidot 3*3 a indeks&#275;tu matricu ar visiem tr&#299;s variantiem</h2><pre class="codeinput"><span class="comment">% pirmais veids</span>
+fprintf(<span class="string">'\npirmais veids k&#257; def'</span>)
+a11 = sym(<span class="string">'a11'</span>);
+a12 = sym(<span class="string">'a12'</span>);
+a13 = sym(<span class="string">'a13'</span>);
+a21 = sym(<span class="string">'a21'</span>);
+a22 = sym(<span class="string">'a22'</span>);
+a23 = sym(<span class="string">'a23'</span>);
+a31 = sym(<span class="string">'a31'</span>);
+a32 = sym(<span class="string">'a32'</span>);
+a33 = sym(<span class="string">'a33'</span>);
+A = [a11 a12 a13; a21 a22 a23; a31 a32 a33]
+A*A
+A.*A
+fprintf(<span class="string">'Absol&#363;ti ne&#275;rti, katru elementu j&#257;defin&#275; atsevi&#353;&#311;i.\n'</span>)
+
+<span class="comment">% otrais veids</span>
+fprintf(<span class="string">'\notrais veids k&#257; def'</span>)
+syms <span class="string">a11</span> <span class="string">a12</span> <span class="string">a13</span> <span class="string">a21</span> <span class="string">a22</span> <span class="string">a23</span> <span class="string">a31</span> <span class="string">a32</span> <span class="string">a33</span>;
+A = [a11 a12 a13; a21 a22 a23; a31 a32 a33]
+A*A
+A.*A
+fprintf(<span class="string">'&#274;rt&#257;k, jo visi main&#299;gie tiek defin&#275;ti vien&#257; rind&#257;,\nv&#275;lproj&#257;m ne&#275;rti, jo matricu j&#257;defin&#275; pa atsevi&#353;&#311;iem elementiem.\n'</span>)
+
+<span class="comment">% tre&#353;&#257;is veids</span>
+fprintf(<span class="string">'\ntre&#353;ais veids k&#257; def'</span>)
+A = sym(<span class="string">'a'</span>,[3 3])
+A*A
+A.*A
+fprintf(<span class="string">'&#274;rt&#257;kais veids k&#257; defin&#275;t, jo elementi tiek indeks&#275;ti autom&#257;tiski.\n'</span>)
+fprintf(<span class="string">'\nAtbilde uz uzdevumu:\n'</span>)
+fprintf(<span class="string">'Izteiksme "A*A" reizina matricas.\n'</span>)
+fprintf(<span class="string">'Simbols "." nor&#257;da "elementwise" darb&#299;bu.\n'</span>)
+fprintf(<span class="string">'Izteiksme ".*" reizina elementus ar savstarp&#275;ji vien&#257;diem indeksiem,\n'</span>)
+fprintf(<span class="string">'jeb "A.*A" gadijum&#257;, katrs elements tiek k&#257;pin&#257;ts kvadr&#257;t&#257;.\n'</span>)
+fprintf(<span class="string">'\nuzdevums 1 end\n'</span>)
+</pre><pre class="codeoutput">
+pirmais veids k&#257; def 
+A =
+ 
+[a11, a12, a13]
+[a21, a22, a23]
+[a31, a32, a33]
+ 
+ 
+ans =
+ 
+[  a11^2 + a12*a21 + a13*a31, a11*a12 + a12*a22 + a13*a32, a11*a13 + a12*a23 + a13*a33]
+[a11*a21 + a21*a22 + a23*a31,   a22^2 + a12*a21 + a23*a32, a13*a21 + a22*a23 + a23*a33]
+[a11*a31 + a21*a32 + a31*a33, a12*a31 + a22*a32 + a32*a33,   a33^2 + a13*a31 + a23*a32]
+ 
+ 
+ans =
+ 
+[a11^2, a12^2, a13^2]
+[a21^2, a22^2, a23^2]
+[a31^2, a32^2, a33^2]
+ 
+Absol&#363;ti ne&#275;rti, katru elementu j&#257;defin&#275; atsevi&#353;&#311;i.
+
+otrais veids k&#257; def 
+A =
+ 
+[a11, a12, a13]
+[a21, a22, a23]
+[a31, a32, a33]
+ 
+ 
+ans =
+ 
+[  a11^2 + a12*a21 + a13*a31, a11*a12 + a12*a22 + a13*a32, a11*a13 + a12*a23 + a13*a33]
+[a11*a21 + a21*a22 + a23*a31,   a22^2 + a12*a21 + a23*a32, a13*a21 + a22*a23 + a23*a33]
+[a11*a31 + a21*a32 + a31*a33, a12*a31 + a22*a32 + a32*a33,   a33^2 + a13*a31 + a23*a32]
+ 
+ 
+ans =
+ 
+[a11^2, a12^2, a13^2]
+[a21^2, a22^2, a23^2]
+[a31^2, a32^2, a33^2]
+ 
+&#274;rt&#257;k, jo visi main&#299;gie tiek defin&#275;ti vien&#257; rind&#257;,
+v&#275;lproj&#257;m ne&#275;rti, jo matricu j&#257;defin&#275; pa atsevi&#353;&#311;iem elementiem.
+
+tre&#353;ais veids k&#257; def 
+A =
+ 
+[a1_1, a1_2, a1_3]
+[a2_1, a2_2, a2_3]
+[a3_1, a3_2, a3_3]
+ 
+ 
+ans =
+ 
+[   a1_1^2 + a1_2*a2_1 + a1_3*a3_1, a1_1*a1_2 + a1_2*a2_2 + a1_3*a3_2, a1_1*a1_3 + a1_2*a2_3 + a1_3*a3_3]
+[a1_1*a2_1 + a2_1*a2_2 + a2_3*a3_1,    a2_2^2 + a1_2*a2_1 + a2_3*a3_2, a1_3*a2_1 + a2_2*a2_3 + a2_3*a3_3]
+[a1_1*a3_1 + a2_1*a3_2 + a3_1*a3_3, a1_2*a3_1 + a2_2*a3_2 + a3_2*a3_3,    a3_3^2 + a1_3*a3_1 + a2_3*a3_2]
+ 
+ 
+ans =
+ 
+[a1_1^2, a1_2^2, a1_3^2]
+[a2_1^2, a2_2^2, a2_3^2]
+[a3_1^2, a3_2^2, a3_3^2]
+ 
+&#274;rt&#257;kais veids k&#257; defin&#275;t, jo elementi tiek indeks&#275;ti autom&#257;tiski.
+
+Atbilde uz uzdevumu:
+Izteiksme "A*A" reizina matricas.
+Simbols "." nor&#257;da "elementwise" darb&#299;bu.
+Izteiksme ".*" reizina elementus ar savstarp&#275;ji vien&#257;diem indeksiem,
+jeb "A.*A" gadijum&#257;, katrs elements tiek k&#257;pin&#257;ts kvadr&#257;t&#257;.
+
+uzdevums 1 end
+</pre><h2 id="4">piem&#275;rs 3: Atvasin&#257;&#353;ana</h2><p>atvasin&#257;&#353;ana</p><pre class="codeinput">fprintf(<span class="string">'\nvienk&#257;r&#353;a atvasin&#257;&#353;ana'</span>)
+syms <span class="string">x</span>
+y = x^2
+diff(y)
+diff(x^2)
+
+<span class="comment">% sintakse</span>
+<span class="comment">% diff(ko_atvasin&#257;t,p&#275;c_k&#257;_atvasin&#257;t,cik_reizes)</span>
+fprintf(<span class="string">'\natvasin&#257;&#353;ana z p&#275;c x, z p&#275;c y'</span>)
+syms <span class="string">x</span> <span class="string">y</span>
+z = x^5*y^3;
+diff(z,x)
+diff(z,y)
+
+<span class="comment">% daudzk&#257;rt&#299;gie atvaisin&#257;jumi</span>
+fprintf(<span class="string">'\natvasin&#257;&#353;ana divreiz'</span>)
+syms <span class="string">x</span>
+diff(x^2,x,2)
+fprintf(<span class="string">'\npiem&#275;rs 3 end\n'</span>)
+</pre><pre class="codeoutput">
+vienk&#257;r&#353;a atvasin&#257;&#353;ana 
+y =
+ 
+x^2
+ 
+ 
+ans =
+ 
+2*x
+ 
+ 
+ans =
+ 
+2*x
+ 
+
+atvasin&#257;&#353;ana z p&#275;c x, z p&#275;c y 
+ans =
+ 
+5*x^4*y^3
+ 
+ 
+ans =
+ 
+3*x^5*y^2
+ 
+
+atvasin&#257;&#353;ana divreiz 
+ans =
+ 
+2
+ 
+
+piem&#275;rs 3 end
+</pre><h2 id="5">uzdevums 2: apr&#275;&#311;in&#257;t atvisn&#257;jumu funkcijai z = a.*x.^2</h2><pre class="codeinput">syms <span class="string">a</span> <span class="string">x</span>
+z = a.*x.^2;
+diff(z,x)
+diff(z,y)
+fprintf(<span class="string">'\nuzdevums 2 end\n'</span>)
+</pre><pre class="codeoutput"> 
+ans =
+ 
+2*a*x
+ 
+ 
+ans =
+ 
+0
+ 
+
+uzdevums 2 end
+</pre><h2 id="6">uzdevums 3: apr&#275;&#311;in&#257;t atvasin&#257;jumu savai funkcijai</h2><pre class="codeinput">syms <span class="string">a</span> <span class="string">b</span> <span class="string">x</span>
+fprintf(<span class="string">'\nfunkcija:'</span>)
+y = a*x^3 + b*cos(x^5) + a*b*x^3
+fprintf(<span class="string">'\npirm&#257;s k&#257;rtas atv'</span>)
+diff(y,x)
+fprintf(<span class="string">'\notr&#257;s k&#257;rtas atv'</span>)
+diff(y,x,2)
+fprintf(<span class="string">'\ntre&#353;&#257;s k&#257;rtas atv'</span>)
+diff(y,x,3)
+fprintf(<span class="string">'\nceturt&#257;s k&#257;rtas atv'</span>)
+diff(y,x,4)
+fprintf(<span class="string">'\nuzdevums 3 end\n'</span>)
+</pre><pre class="codeoutput">
+funkcija: 
+y =
+ 
+a*x^3 + b*cos(x^5) + a*b*x^3
+ 
+
+pirm&#257;s k&#257;rtas atv 
+ans =
+ 
+3*a*x^2 - 5*b*x^4*sin(x^5) + 3*a*b*x^2
+ 
+
+otr&#257;s k&#257;rtas atv 
+ans =
+ 
+6*a*x + 6*a*b*x - 25*b*x^8*cos(x^5) - 20*b*x^3*sin(x^5)
+ 
+
+tre&#353;&#257;s k&#257;rtas atv 
+ans =
+ 
+6*a + 6*a*b - 300*b*x^7*cos(x^5) - 60*b*x^2*sin(x^5) + 125*b*x^12*sin(x^5)
+ 
+
+ceturt&#257;s k&#257;rtas atv 
+ans =
+ 
+625*b*x^16*cos(x^5) - 2400*b*x^6*cos(x^5) - 120*b*x*sin(x^5) + 3000*b*x^11*sin(x^5)
+ 
+
+uzdevums 3 end
+</pre><h2 id="7">piem&#275;rs 4: Integr&#275;&#353;ana</h2><pre class="codeinput">fprintf(<span class="string">'\nfunkcija: int(izteiksme_kuru_integr&#275;,diferenci&#257;lis_p&#275;c_k&#257;_integr&#275;)'</span>)
+fprintf(<span class="string">'\n!!!integr&#275;jot matlab&#257; nepar&#257;d&#257;s const C!!!'</span>)
+fprintf(<span class="string">'\npiem&#275;rs 4 end\n'</span>)
+</pre><pre class="codeoutput">
+funkcija: int(izteiksme_kuru_integr&#275;,diferenci&#257;lis_p&#275;c_k&#257;_integr&#275;)
+!!!integr&#275;jot matlab&#257; nepar&#257;d&#257;s const C!!!
+piem&#275;rs 4 end
+</pre><h2 id="8">uzdevums 4: darb&#299;bas ar integr&#275;&#353;anu</h2><pre class="codeinput">fprintf(<span class="string">'\nfunkcija:'</span>)
+syms <span class="string">x</span> <span class="string">y</span>
+z = x^5*y^3
+fprintf(<span class="string">'\natvasin&#257;t p&#275;c y, saglab&#257;t main&#299;gaj&#257; p'</span>)
+p = diff(z,y)
+fprintf(<span class="string">'integr&#275;t p&#275;c dy'</span>)
+int(p,y)
+fprintf(<span class="string">'\nuzdevums 4 end\n'</span>)
+</pre><pre class="codeoutput">
+funkcija: 
+z =
+ 
+x^5*y^3
+ 
+
+atvasin&#257;t p&#275;c y, saglab&#257;t main&#299;gaj&#257; p 
+p =
+ 
+3*x^5*y^2
+ 
+integr&#275;t p&#275;c dy 
+ans =
+ 
+x^5*y^3
+ 
+
+uzdevums 4 end
+</pre><h2 id="9">piem&#275;rs 5: noteiktais integr&#257;lis</h2><pre class="codeinput"><span class="comment">%{
+</span><span class="comment">Noteiktais integr&#257;lis: fig&#363;ras laukums, ko grafiski veido zemintegr&#257;&#316;a
+</span><span class="comment">izteiksme, koordin&#257;&#353;u asis(x) un integr&#275;&#353;anas robe&#382;as.
+</span><span class="comment">Jeb anal&#299;tiski integr&#257;&#316;a v&#275;rt&#299;ba noteikt&#257;s robe&#382;&#257;s.
+</span><span class="comment">Noteikto inegr&#257;li apr&#275;&#311;ina nosakot izteiksmes nenoteikto integr&#257;li,
+</span><span class="comment">ievietojot robe&#382;u v&#275;rt&#299;bas main&#299;g&#257; viet&#257; un apr&#275;&#311;inot ieg&#363;to izteiksmju
+</span><span class="comment">starp&#299;bu.
+</span><span class="comment">%}
+</span>fprintf(<span class="string">'\nNoteikt&#257; integr&#257;&#316;a sintakse MATLAB vid&#275;:'</span>)
+fprintf(<span class="string">'\nint(izteiksme,diferenci&#257;lis_p&#275;c_k&#257;_integr&#275;t,kreis&#257;/apak&#353;&#275;j&#257;_robe&#382;a,laba/aug&#353;&#275;j&#257;_robe&#382;a)\n'</span>)
+fprintf(<span class="string">'\npiem&#275;rs 5 end\n'</span>)
+</pre><pre class="codeoutput">
+Noteikt&#257; integr&#257;&#316;a sintakse MATLAB vid&#275;:
+int(izteiksme,diferenci&#257;lis_p&#275;c_k&#257;_integr&#275;t,kreis&#257;/apak&#353;&#275;j&#257;_robe&#382;a,laba/aug&#353;&#275;j&#257;_robe&#382;a)
+
+piem&#275;rs 5 end
+</pre><h2 id="10">uzdevums 5: apr&#275;&#311;in&#257;t noteikto integr&#257;li</h2><pre class="codeinput">syms <span class="string">x</span>;
+y = sin(x)
+int(y,x,0,pi)
+fprintf(<span class="string">'\nuzdevums 5 end\n'</span>)
+</pre><pre class="codeoutput"> 
+y =
+ 
+sin(x)
+ 
+ 
+ans =
+ 
+2
+ 
+
+uzdevums 5 end
+</pre><h2 id="11">uzdevums 6: integr&#257;lis, robe&#382;as, vien&#257;dojumi</h2><pre class="codeinput">fprintf(<span class="string">'\nINTEGR&#274;&#352;ANA:\n'</span>)
+syms <span class="string">x</span>;
+y = sin(x)^2
+
+fprintf(<span class="string">'\nbez double\n'</span>)
+int(y,x,0,pi/3)
+fprintf(<span class="string">'\nar double\n'</span>)
+double(int(y,x,0,pi/3))
+
+fprintf(<span class="string">'\nROBE&#381;AS:\n'</span>)
+fprintf(<span class="string">'\nRobe&#382;u sintakse MATLAB vid&#275;:'</span>)
+fprintf(<span class="string">'\nlimit(izteiksme,main&#299;gais,uz_ko_tiecas,no_kuras_puses)\n'</span>)
+fprintf(<span class="string">'\npiem&#275;rs:\n'</span>)
+syms <span class="string">x</span>;
+y = 1/(x-1)
+fprintf(<span class="string">'\nizteiksme:'</span>)
+fprintf(<span class="string">'\n         / 1 \\          '</span>)
+fprintf(<span class="string">'\n  lim   |-----|          '</span>)
+fprintf(<span class="string">'\n x -&gt; 1  \\x-1/           '</span>)
+fprintf(<span class="string">'\n                         '</span>)
+fprintf(<span class="string">'\n\nno kreis&#257;s puses:'</span>)
+limit((1/(x-1)),x,1,<span class="string">'left'</span>)
+fprintf(<span class="string">'\nno lab&#257;s puses:'</span>)
+limit((1/(x-1)),x,1,<span class="string">'right'</span>)
+
+fprintf(<span class="string">'\nVIEN&#256;DOJUMI:\n'</span>)
+fprintf(<span class="string">'\nsolve sintakse MATLAB vid&#275;:'</span>)
+fprintf(<span class="string">'\nsolve(izteiksme_ko_atrisin&#257;t,ko_j&#257;atrod)\n'</span>)
+
+fprintf(<span class="string">'\nvienk&#257;r&#353;as izteksmes\n'</span>)
+syms <span class="string">x</span>
+fprintf(<span class="string">'\nAtrast saknes izteiksmei x^2-3*x+2=0:\n'</span>)
+solve(x^2-3*x+2==0,x)
+
+fprintf(<span class="string">'\nsist&#275;mas:\n'</span>)
+syms <span class="string">x</span> <span class="string">y</span>
+[x_atb,y_atb] = solve(5*x+2*y==16,x-y==-1)
+atb = solve(5*x+2*y==16,x-y==-1)
+<span class="comment">%atbilde ir datu strukt&#363;ra, elementus var ieg&#363;tu rakstot pie&#353;&#311;irto main&#299;go</span>
+<span class="comment">%un ".x" indeksu.</span>
+<span class="comment">%x risin&#257;jums: atb.x</span>
+atb.x
+<span class="comment">%y risin&#257;jums: atb.y</span>
+atb.y
+
+fprintf(<span class="string">'\nuzdevums 6 end\n'</span>)
+</pre><pre class="codeoutput">
+INTEGR&#274;&#352;ANA:
+ 
+y =
+ 
+sin(x)^2
+ 
+
+bez double
+ 
+ans =
+ 
+pi/6 - 3^(1/2)/8
+ 
+
+ar double
+
+ans =
+
+    0.3071
+
+
+ROBE&#381;AS:
+
+Robe&#382;u sintakse MATLAB vid&#275;:
+limit(izteiksme,main&#299;gais,uz_ko_tiecas,no_kuras_puses)
+
+piem&#275;rs:
+ 
+y =
+ 
+1/(x - 1)
+ 
+
+izteiksme:
+         / 1 \          
+  lim   |-----|          
+ x -&gt; 1  \x-1/           
+                         
+
+no kreis&#257;s puses: 
+ans =
+ 
+-Inf
+ 
+
+no lab&#257;s puses: 
+ans =
+ 
+Inf
+ 
+
+VIEN&#256;DOJUMI:
+
+solve sintakse MATLAB vid&#275;:
+solve(izteiksme_ko_atrisin&#257;t,ko_j&#257;atrod)
+
+vienk&#257;r&#353;as izteksmes
+
+Atrast saknes izteiksmei x^2-3*x+2=0:
+ 
+ans =
+ 
+1
+2
+ 
+
+sist&#275;mas:
+ 
+x_atb =
+ 
+2
+ 
+ 
+y_atb =
+ 
+3
+ 
+
+atb = 
+
+  struct with fields:
+
+    x: [1&times;1 sym]
+    y: [1&times;1 sym]
+
+ 
+ans =
+ 
+2
+ 
+ 
+ans =
+ 
+3
+ 
+
+uzdevums 6 end
+</pre><h2 id="12">uzdevums 7: "individualized task 2023"</h2><pre class="codeinput"><span class="comment">%izteiksme x+a*sqrt(x^2) = c, a - ?</span>
+syms <span class="string">x</span> <span class="string">a</span> <span class="string">c</span>
+solve(x+a*sqrt(x^2)==c,a)
+<span class="comment">%{
+</span><span class="comment">%integr&#275;t f(x) = -(cos(x)-1)/(x-sin(x))^2, F(x)-?, robe&#382;&#257;s x pieder [pi,5pi]
+</span><span class="comment">f = -1*(cos(x)-1)/(x-sin(x))^2
+</span><span class="comment">%izteiksme
+</span><span class="comment">int(f,x,pi,5*pi)
+</span><span class="comment">%skaitlisk&#257; v&#275;rt&#299;ba
+</span><span class="comment">double(int(f,x,pi,5*pi))
+</span><span class="comment">%}
+</span>fprintf(<span class="string">'\nuzdevums 7 end\n'</span>)
+</pre><pre class="codeoutput"> 
+ans =
+ 
+(c - x)/(x^2)^(1/2)
+ 
+
+uzdevums 7 end
+</pre><h2 id="13">piem&#275;rs 6: vienk&#257;r&#353;o&#353;ana</h2><pre class="codeinput">syms <span class="string">x</span> <span class="string">y</span>
+y = (sin(x)^2 + cos(x)^2);
+y
+simplify(y)
+<span class="comment">%piem&#275;rs</span>
+F = (x-1)*(x-2)/((x-3)*(x-4))
+Fi = diff(F)
+simplify(Fi)
+<span class="comment">%izteiksmju p&#257;rveido&#353;ana</span>
+F = (x - 1)*(x - 2);
+<span class="comment">%atv&#275;rt iekavas</span>
+F2 = expand(F)
+<span class="comment">%p&#257;rveidot reizin&#257;t&#257;jos</span>
+factor(F2)
+<span class="comment">%p&#257;rveidot p&#275;c hornera sh&#275;mas</span>
+horner(F2)
+<span class="comment">%sagrup&#275;t collect(izteiksme,p&#275;c_k&#257;_grup&#275;t)</span>
+collect(F2)
+fprintf(<span class="string">'\npiem&#275;rs 6 end\n'</span>)
+</pre><pre class="codeoutput"> 
+y =
+ 
+cos(x)^2 + sin(x)^2
+ 
+ 
+ans =
+ 
+1
+ 
+ 
+F =
+ 
+((x - 1)*(x - 2))/((x - 3)*(x - 4))
+ 
+ 
+Fi =
+ 
+(x - 1)/((x - 3)*(x - 4)) + (x - 2)/((x - 3)*(x - 4)) - ((x - 1)*(x - 2))/((x - 3)*(x - 4)^2) - ((x - 1)*(x - 2))/((x - 3)^2*(x - 4))
+ 
+ 
+ans =
+ 
+-(2*(2*x^2 - 10*x + 11))/(x^2 - 7*x + 12)^2
+ 
+ 
+F2 =
+ 
+x^2 - 3*x + 2
+ 
+ 
+ans =
+ 
+[x - 1, x - 2]
+ 
+ 
+ans =
+ 
+x*(x - 3) + 2
+ 
+ 
+ans =
+ 
+x^2 - 3*x + 2
+ 
+
+piem&#275;rs 6 end
+</pre><h2 id="14">piem&#275;rs 7: k&#257; skaist&#257;k att&#275;lot</h2><pre class="codeinput"><span class="comment">%piem&#275;rs 1</span>
+syms <span class="string">x</span>
+F = ((x - 1)*(x - 2))/((x - 3)*(x - 4));
+pretty(F)
+<span class="comment">%piem&#275;rs 2</span>
+syms <span class="string">x</span>
+F = ((x - 1)*(x - 2))/((x - 3)*(x - 4));
+latex(F)
+Fltx=latex(F);
+h=text(0.5,0.5,[<span class="string">'$'</span>,Fltx,<span class="string">'$'</span>]);set(h,<span class="string">'Interpreter'</span>,<span class="string">'latex'</span>)
+fprintf(<span class="string">'\npiem&#275;rs 7 end\n'</span>)
+</pre><pre class="codeoutput">(x - 1) (x - 2)
+---------------
+(x - 3) (x - 4)
+
+
+ans =
+
+    '\frac{\left(x-1\right)\,\left(x-2\right)}{\left(x-3\right)\,\left(x-4\right)}'
+
+
+piem&#275;rs 7 end
+</pre><img vspace="5" hspace="5" src="LAb1_01.png" alt=""> <h2 id="15">piem&#275;rs 8: substit&#363;cija</h2><pre class="codeinput">syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span>
+z = x^2+y^3
+subs(z,y,5*x)
+fprintf(<span class="string">'\npiem&#275;rs 8 end\n'</span>)
+</pre><pre class="codeoutput"> 
+z =
+ 
+x^2 + y^3
+ 
+ 
+ans =
+ 
+125*x^3 + x^2
+ 
+
+piem&#275;rs 8 end
+</pre><h2 id="16">uzdevums 8: Substit&#363;cijas</h2><pre class="codeinput">syms <span class="string">z</span> <span class="string">x</span> <span class="string">y</span> <span class="string">t</span>
+z = x^2+y^2
+z1 = subs(z,x,sin(t));
+z2 = subs(z1,y,cos(t))
+simplify(z2)
+fprintf(<span class="string">'\nuzdevums 8 end\n'</span>)
+</pre><pre class="codeoutput"> 
+z =
+ 
+x^2 + y^2
+ 
+ 
+z2 =
+ 
+cos(t)^2 + sin(t)^2
+ 
+ 
+ans =
+ 
+1
+ 
+
+uzdevums 8 end
+</pre><h2 id="17">piem&#275;rs 9: grafika z&#299;m&#275;&#353;ana p&#275;c simbolisk&#257;s izteiksmes</h2><p>metode 1</p><pre class="codeinput">syms <span class="string">x</span>
+F = ((x-1)*(x-2))/((x-3)*(x-4))
+ezplot(F)
+
+<span class="comment">% metode 2</span>
+y = x^2;
+yd = diff(y,x)
+x = [-3:0.01:3];
+yv = vectorize(y)
+ydv = vectorize(yd)
+yn = eval(yv);
+ydn = eval(ydv);
+plot(x,yn,x,ydn)
+y_latex = latex(y);
+yd_latex = latex(yd);
+h = legend([<span class="string">'$'</span>,y_latex,<span class="string">'$'</span>],[<span class="string">'$'</span>,yd_latex,<span class="string">'$'</span>]);set(h,<span class="string">'Interpreter'</span>,<span class="string">'latex'</span>)
+fprintf(<span class="string">'\npiem&#275;rs 9 end\n'</span>)
+</pre><pre class="codeoutput"> 
+F =
+ 
+((x - 1)*(x - 2))/((x - 3)*(x - 4))
+ 
+ 
+yd =
+ 
+2*x
+ 
+
+yv =
+
+    'x.^2'
+
+
+ydv =
+
+    '2.*x'
+
+
+piem&#275;rs 9 end
+</pre><img vspace="5" hspace="5" src="LAb1_02.png" alt=""> <h2 id="18">uzdevums 9: "individualized task 2023"</h2><pre class="codeinput">syms <span class="string">x</span>
+f = -1*(cos(x)-1)/(x-sin(x))^2
+F =  int(f,x)
+x = [pi:0.01:(5*pi)];
+fv = vectorize(f);
+Fv = vectorize(F);
+fn = eval(fv);
+Fn = eval(Fv);
+plot(x,fn,x,Fn)
+f_latex = latex(f);
+F_latex = latex(F);
+h = legend([<span class="string">'$'</span>,f_latex,<span class="string">'$'</span>],[<span class="string">'$'</span>,F_latex,<span class="string">'$'</span>]);set(h,<span class="string">'Interpreter'</span>,<span class="string">'latex'</span>)
+fprintf(<span class="string">'\nuzdevums 8 end\n'</span>)
+</pre><pre class="codeoutput"> 
+f =
+ 
+-(cos(x) - 1)/(x - sin(x))^2
+ 
+ 
+F =
+ 
+-1/(x - sin(x))
+ 
+
+uzdevums 8 end
+</pre><img vspace="5" hspace="5" src="LAb1_03.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% piemērs 1: Simboliskie elementi
+syms a b c d
+A = [a b;c d]
+syms h g p q
+B = [h g;p q]
+C = A*B
+D = A.*B
+fprintf('\npiemērs 1 end\n')
+%% piemērs 2: Simbolisko elementu definēšana
+
+% pirmais veids
+fprintf('\npirmais veids kā def')
+a = sym('a');
+% aprēķins
+sqrt(a^2)
+% definīcija, a, kur a > 0
+a = sym('a','positive');
+% aprēķins
+sqrt(a^2)
+
+% otrais veids
+fprintf('\notrais veids kā def')
+syms a b c d
+A = [a b; c d]
+A'
+%{
+"'"(apostrofs) - transponēšana
+Kompl. skaitļiem tas taisa kompl. saistītus skaitļus("conj"conjunction).
+Simboliskais mainīgais šajā situācijā ir domāts kompl. skaitlis.
+(Šis visticamāk būs noderīgi fizikas atvasinātos priekšmetos ar laukiem utt.)
+%}
+
+% def a b c d kā ne kompl. sk.
+syms a b c d real
+A = [a b; c d]
+A'
+
+% trešāis veids
+fprintf('\ntrešais veids kā def')
+% uzreiz def izveido matricu, pieliek indeksus
+ A = sym('a',[2 3])
+fprintf('\npiemērs 2 end\n')
+%% uzdevums 1: izveidot 3*3 a indeksētu matricu ar visiem trīs variantiem
+
+% pirmais veids
+fprintf('\npirmais veids kā def')
+a11 = sym('a11');
+a12 = sym('a12');
+a13 = sym('a13');
+a21 = sym('a21');
+a22 = sym('a22');
+a23 = sym('a23');
+a31 = sym('a31');
+a32 = sym('a32');
+a33 = sym('a33');
+A = [a11 a12 a13; a21 a22 a23; a31 a32 a33]
+A*A
+A.*A
+fprintf('Absolūti neērti, katru elementu jādefinē atsevišķi.\n')
+
+% otrais veids
+fprintf('\notrais veids kā def')
+syms a11 a12 a13 a21 a22 a23 a31 a32 a33;
+A = [a11 a12 a13; a21 a22 a23; a31 a32 a33]
+A*A
+A.*A
+fprintf('Ērtāk, jo visi mainīgie tiek definēti vienā rindā,\nvēlprojām neērti, jo matricu jādefinē pa atsevišķiem elementiem.\n')
+
+% trešāis veids
+fprintf('\ntrešais veids kā def')
+A = sym('a',[3 3])
+A*A
+A.*A
+fprintf('Ērtākais veids kā definēt, jo elementi tiek indeksēti automātiski.\n')
+fprintf('\nAtbilde uz uzdevumu:\n')
+fprintf('Izteiksme "A*A" reizina matricas.\n')
+fprintf('Simbols "." norāda "elementwise" darbību.\n')
+fprintf('Izteiksme ".*" reizina elementus ar savstarpēji vienādiem indeksiem,\n')
+fprintf('jeb "A.*A" gadijumā, katrs elements tiek kāpināts kvadrātā.\n')
+fprintf('\nuzdevums 1 end\n')
+%% piemērs 3: Atvasināšana
+% atvasināšana
+fprintf('\nvienkārša atvasināšana')
+syms x
+y = x^2
+diff(y)
+diff(x^2)
+
+% sintakse
+% diff(ko_atvasināt,pēc_kā_atvasināt,cik_reizes)
+fprintf('\natvasināšana z pēc x, z pēc y')
+syms x y
+z = x^5*y^3;
+diff(z,x)
+diff(z,y)
+
+% daudzkārtīgie atvaisinājumi
+fprintf('\natvasināšana divreiz')
+syms x
+diff(x^2,x,2)
+fprintf('\npiemērs 3 end\n')
+%% uzdevums 2: aprēķināt atvisnājumu funkcijai z = a.*x.^2
+syms a x
+z = a.*x.^2;
+diff(z,x)
+diff(z,y)
+fprintf('\nuzdevums 2 end\n')
+%% uzdevums 3: aprēķināt atvasinājumu savai funkcijai
+syms a b x
+fprintf('\nfunkcija:')
+y = a*x^3 + b*cos(x^5) + a*b*x^3
+fprintf('\npirmās kārtas atv')
+diff(y,x)
+fprintf('\notrās kārtas atv')
+diff(y,x,2)
+fprintf('\ntrešās kārtas atv')
+diff(y,x,3)
+fprintf('\nceturtās kārtas atv')
+diff(y,x,4)
+fprintf('\nuzdevums 3 end\n')
+%% piemērs 4: Integrēšana
+fprintf('\nfunkcija: int(izteiksme_kuru_integrē,diferenciālis_pēc_kā_integrē)')
+fprintf('\n!!!integrējot matlabā neparādās const C!!!')
+fprintf('\npiemērs 4 end\n')
+%% uzdevums 4: darbības ar integrēšanu
+fprintf('\nfunkcija:')
+syms x y
+z = x^5*y^3
+fprintf('\natvasināt pēc y, saglabāt mainīgajā p')
+p = diff(z,y)
+fprintf('integrēt pēc dy')
+int(p,y)
+fprintf('\nuzdevums 4 end\n')
+%% piemērs 5: noteiktais integrālis
+%{
+Noteiktais integrālis: figūras laukums, ko grafiski veido zemintegrāļa
+izteiksme, koordināšu asis(x) un integrēšanas robežas.
+Jeb analītiski integrāļa vērtība noteiktās robežās.
+Noteikto inegrāli aprēķina nosakot izteiksmes nenoteikto integrāli,
+ievietojot robežu vērtības mainīgā vietā un aprēķinot iegūto izteiksmju
+starpību.
+%}
+fprintf('\nNoteiktā integrāļa sintakse MATLAB vidē:')
+fprintf('\nint(izteiksme,diferenciālis_pēc_kā_integrēt,kreisā/apakšējā_robeža,laba/augšējā_robeža)\n')
+fprintf('\npiemērs 5 end\n')
+%% uzdevums 5: aprēķināt noteikto integrāli
+syms x;
+y = sin(x)
+int(y,x,0,pi)
+fprintf('\nuzdevums 5 end\n')
+%% uzdevums 6: integrālis, robežas, vienādojumi
+fprintf('\nINTEGRĒŠANA:\n')
+syms x;
+y = sin(x)^2
+
+fprintf('\nbez double\n')
+int(y,x,0,pi/3)
+fprintf('\nar double\n')
+double(int(y,x,0,pi/3))
+
+fprintf('\nROBEŽAS:\n')
+fprintf('\nRobežu sintakse MATLAB vidē:')
+fprintf('\nlimit(izteiksme,mainīgais,uz_ko_tiecas,no_kuras_puses)\n')
+fprintf('\npiemērs:\n')
+syms x;
+y = 1/(x-1)
+fprintf('\nizteiksme:')
+fprintf('\n         / 1 \\          ')
+fprintf('\n  lim   |REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-|          ')
+fprintf('\n x -> 1  \\x-1/           ')
+fprintf('\n                         ')
+fprintf('\n\nno kreisās puses:')
+limit((1/(x-1)),x,1,'left')
+fprintf('\nno labās puses:')
+limit((1/(x-1)),x,1,'right')
+
+fprintf('\nVIENĀDOJUMI:\n')
+fprintf('\nsolve sintakse MATLAB vidē:')
+fprintf('\nsolve(izteiksme_ko_atrisināt,ko_jāatrod)\n')
+
+fprintf('\nvienkāršas izteksmes\n')
+syms x
+fprintf('\nAtrast saknes izteiksmei x^2-3*x+2=0:\n')
+solve(x^2-3*x+2==0,x)
+
+fprintf('\nsistēmas:\n')
+syms x y
+[x_atb,y_atb] = solve(5*x+2*y==16,x-y==-1)
+atb = solve(5*x+2*y==16,x-y==-1)
+%atbilde ir datu struktūra, elementus var iegūtu rakstot piešķirto mainīgo
+%un ".x" indeksu.
+%x risinājums: atb.x
+atb.x
+%y risinājums: atb.y
+atb.y
+
+fprintf('\nuzdevums 6 end\n')
+%% uzdevums 7: "individualized task 2023"
+%izteiksme x+a*sqrt(x^2) = c, a - ?
+syms x a c
+solve(x+a*sqrt(x^2)==c,a)
+%{
+%integrēt f(x) = -(cos(x)-1)/(x-sin(x))^2, F(x)-?, robežās x pieder [pi,5pi]
+f = -1*(cos(x)-1)/(x-sin(x))^2
+%izteiksme
+int(f,x,pi,5*pi)
+%skaitliskā vērtība
+double(int(f,x,pi,5*pi))
+%}
+fprintf('\nuzdevums 7 end\n')
+%% piemērs 6: vienkāršošana
+syms x y
+y = (sin(x)^2 + cos(x)^2);
+y
+simplify(y)
+%piemērs
+F = (x-1)*(x-2)/((x-3)*(x-4))
+Fi = diff(F)
+simplify(Fi)
+%izteiksmju pārveidošana
+F = (x - 1)*(x - 2);
+%atvērt iekavas
+F2 = expand(F)
+%pārveidot reizinātājos
+factor(F2)
+%pārveidot pēc hornera shēmas
+horner(F2)
+%sagrupēt collect(izteiksme,pēc_kā_grupēt)
+collect(F2)
+fprintf('\npiemērs 6 end\n')
+%% piemērs 7: kā skaistāk attēlot
+%piemērs 1
+syms x
+F = ((x - 1)*(x - 2))/((x - 3)*(x - 4));
+pretty(F)
+%piemērs 2
+syms x
+F = ((x - 1)*(x - 2))/((x - 3)*(x - 4));
+latex(F)
+Fltx=latex(F);
+h=text(0.5,0.5,['$',Fltx,'$']);set(h,'Interpreter','latex')
+fprintf('\npiemērs 7 end\n')
+%% piemērs 8: substitūcija
+syms x y z
+z = x^2+y^3
+subs(z,y,5*x)
+fprintf('\npiemērs 8 end\n')
+%% uzdevums 8: Substitūcijas
+syms z x y t
+z = x^2+y^2
+z1 = subs(z,x,sin(t));
+z2 = subs(z1,y,cos(t))
+simplify(z2)
+fprintf('\nuzdevums 8 end\n')
+%% piemērs 9: grafika zīmēšana pēc simboliskās izteiksmes
+% metode 1
+syms x
+F = ((x-1)*(x-2))/((x-3)*(x-4))
+ezplot(F)
+
+% metode 2
+y = x^2;
+yd = diff(y,x)
+x = [-3:0.01:3];
+yv = vectorize(y)
+ydv = vectorize(yd)
+yn = eval(yv);
+ydn = eval(ydv);
+plot(x,yn,x,ydn)
+y_latex = latex(y);
+yd_latex = latex(yd);
+h = legend(['$',y_latex,'$'],['$',yd_latex,'$']);set(h,'Interpreter','latex')
+fprintf('\npiemērs 9 end\n')
+%% uzdevums 9: "individualized task 2023"
+syms x
+f = -1*(cos(x)-1)/(x-sin(x))^2
+F =  int(f,x)
+x = [pi:0.01:(5*pi)];
+fv = vectorize(f);
+Fv = vectorize(F);
+fn = eval(fv);
+Fn = eval(Fv);
+plot(x,fn,x,Fn)
+f_latex = latex(f);
+F_latex = latex(F);
+h = legend(['$',f_latex,'$'],['$',F_latex,'$']);set(h,'Interpreter','latex')
+fprintf('\nuzdevums 8 end\n')
+
+##### SOURCE END #####
+--></body></html>
